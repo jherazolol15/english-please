@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#16384a">
+<title>English, please</title>
+<meta name="description" content="English, please: material interactivo de inglés para grado 8.º del Liceo Guillermo Valencia. Gramática con ejemplos, verbos, práctica de las cuatro habilidades y exámenes con nota en PDF.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+/* Modo docente: abrir con ?docente=CLAVE. Docente = tema claro · Estudiantes = tema oscuro. */
+(function(){var K="profe-juan",F="englishplease.teacher",t=false;
+try{var q=new URLSearchParams(location.search).get("docente");
+if(q===K){localStorage.setItem(F,"1");history.replaceState(null,"",location.pathname+location.hash)}
+t=localStorage.getItem(F)==="1"}catch(e){}
+document.documentElement.setAttribute("data-theme",t?"light":"dark");
+if(t)document.documentElement.classList.add("teacher")})();
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Ir al contenido</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio"><span class="bubble" aria-hidden="true">EP</span><span><b>English, <i>please</i></b><small>INGLÉS · GRADO 8.º</small></span></a>
+    <nav class="links" aria-label="Secciones">
+      <a href="#unidades">Unidades</a>
+      <a href="#como" class="nav-opt">Cómo funciona</a>
+      <a href="#autor" class="nav-opt">Autor</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="inicio">
+    <div class="wrap">
+      <div>
+        <span class="tag">MATERIAL INTERACTIVO · INGLÉS 8.º · A2</span>
+        <h1>English, <em>please</em></h1>
+        <p class="lead">Un lugar para aprender, practicar y demostrar tu inglés. Cada unidad trae explicación con ejemplos y audio, verbos y palabras clave, práctica de las cuatro habilidades y un examen final.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="units/present-perfect/">Empezar: Present Perfect →</a>
+          <a class="btn btn-ghost" href="#unidades">Ver todas las unidades</a>
+        </div>
+        <div class="facts"><span>✓ Reading · Listening · Writing · Speaking</span><span>✓ Audio en cada ejemplo</span><span>✓ Nota de 0 a 5 en PDF</span></div>
+      </div>
+      <aside class="author" id="autor" aria-labelledby="autor-t">
+        <span class="eyebrow" style="color:var(--sun)">Diseñado por</span>
+        <h2 id="autor-t">Juan Pablo Herazo Sibaja</h2>
+        <dl>
+          <dt>Rol</dt><dd>Docente en formación</dd>
+          <dt>Programa</dt><dd>Licenciatura en Lenguas Extranjeras con énfasis en Inglés</dd>
+          <dt>Universidad</dt><dd>Universidad de Córdoba · Montería</dd>
+          <dt>Práctica</dt><dd>Práctica docente 2026-2 · I.E. Liceo Guillermo Valencia</dd>
+          <dt>Grupos</dt><dd>8-1 y 8-2</dd>
+        </dl>
+        <p class="chat-line"><b>Hi!</b> Elige una unidad, aprende a tu ritmo y, cuando estés list@, presenta el examen final.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="block" id="unidades" aria-labelledby="un-t">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Unidades</span>
+        <h2 id="un-t">¿Qué vamos a aprender hoy?</h2>
+        <p>Elige una unidad. Iremos agregando más temas poco a poco.</p>
+      </div>
+      <div class="units" id="units"></div>
+    </div>
+  </section>
+
+  <section class="block alt" id="como" aria-labelledby="como-t">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Cómo funciona</span>
+        <h2 id="como-t">Cada unidad tiene cuatro paradas</h2>
+      </div>
+      <div class="route">
+        <div class="route-item"><a href="units/present-perfect/#aprender"><i>1</i><b>Aprende</b><span>La explicación gramatical con muchos ejemplos. Toca ▶ para escucharlos.</span></a></div>
+        <div class="route-item"><a href="units/present-perfect/#verbos"><i>2</i><b>Verbos y palabras</b><span>La lista para consultar, con buscador, audio y modo repaso.</span></a></div>
+        <div class="route-item"><a href="units/present-perfect/#practicar"><i>3</i><b>Practica</b><span>Reading, listening, writing y speaking, con retroalimentación al instante.</span></a></div>
+        <div class="route-item"><a href="units/present-perfect/#examen"><i>4</i><b>Demuestra</b><span>Examen final con nota de 0 a 5. Descargas tu PDF y tu docente recibe el resultado.</span></a></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span><b>English, please</b> · Juan Pablo Herazo Sibaja · Universidad de Córdoba</span>
+    <span>I.E. Liceo Guillermo Valencia · Inglés 8.º</span>
+  </div>
+</footer>
+
+<script src="assets/core.js"></script>
+<script src="assets/units.js"></script>
+<script>
+(function(){
+  const {esc}=window.EP;
+  document.getElementById("units").innerHTML=window.UNITS.map(u=>`
+    <a class="ucard${u.external?" ext":""}" href="${esc(u.href)}"${u.external?' target="_blank" rel="noopener"':""}>
+      <span class="num">UNIDAD ${u.number} · ${esc(u.theme).toUpperCase()}</span>
+      <h3>${esc(u.title)}</h3>
+      <p>${esc(u.text)}</p>
+      <div class="pillset">${u.parts.map(p=>`<span class="pill">${esc(p)}</span>`).join("")}</div>
+      <span class="go">${u.external?"Abrir Modal Road ↗":"Entrar a la unidad →"}</span>
+    </a>`).join("");
+})();
+</script>
+</body>
+</html>
